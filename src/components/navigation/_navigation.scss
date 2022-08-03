@@ -1,0 +1,54 @@
+.nav_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 75px;
+	position: relative;
+	.nav {
+		background-color: #222;
+		width: 65%;
+		min-width: 320px;
+		max-width: 720px;
+		height: 100%;
+		position: absolute;
+		top: -50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		li {
+			text-transform: uppercase;
+			width: 20%;
+			height: 100%;
+			list-style: none;
+			a {
+				text-decoration: none;
+				height: 100%;
+				width: 100%;
+				text-align: center;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: aliceblue;
+				&:hover {
+					background-color: #444;
+					color: aqua;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.nav_container {
+		height: 60px;
+		.nav {
+			li {
+				a {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}

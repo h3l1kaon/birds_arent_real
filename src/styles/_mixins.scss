@@ -1,0 +1,16 @@
+@use './var' as v;
+@mixin green_btn {
+	padding: 9px 12px;
+	background-color: v.$thisGreen;
+	outline: none;
+	border: 1px solid rgb(8, 85, 6);
+	cursor: pointer;
+	font-size: 18px;
+	color: aliceblue;
+	border-radius: 1px;
+	margin: 20px 0;
+	text-shadow: 1px 1px 14px rgba(0, 0, 0, 0.67);
+}
+@mixin rotate {
+	transform: rotate(10deg);
+}

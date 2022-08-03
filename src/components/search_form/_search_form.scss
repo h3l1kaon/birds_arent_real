@@ -1,0 +1,109 @@
+@use '../../styles/var' as v;
+@import '../../styles/mixins';
+.search_form_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: v.$thisGrey;
+	padding: 20px 0;
+	min-height: 250px;
+	text-transform: uppercase;
+	form {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: none;
+		width: 80%;
+		flex-wrap: wrap;
+		input {
+			height: 25px;
+		}
+		fieldset {
+			display: flex;
+			border: none;
+			height: 70px;
+			.field {
+				display: flex;
+				flex-direction: column;
+				width: 200px;
+				margin: 0 10px;
+			}
+			.label {
+				font-weight: 400;
+				font-size: 12px;
+				margin-bottom: 8px;
+			}
+		}
+		.f1 {
+			flex-wrap: wrap;
+			input {
+				width: 200px;
+			}
+		}
+		.f2 {
+			flex-direction: column;
+			input {
+				width: 120px;
+			}
+			.budget {
+				display: flex;
+				align-items: center;
+				justify-content: space-evenly;
+				div {
+					flex-wrap: nowrap;
+					position: relative;
+					margin: 0 10px;
+
+					span {
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						right: 5px;
+						z-index: 0;
+					}
+				}
+				.from::before {
+					content: 'De';
+					font-size: 12px;
+					margin-right: 10px;
+				}
+				.to::before {
+					content: 'À';
+					font-size: 12px;
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+	input[type='submit'] {
+		@include green_btn;
+	}
+}
+
+@media only screen and (max-width: 560px) {
+	.search_form_container {
+		form {
+			height: 250px;
+		}
+		.f1 {
+			justify-content: center;
+			height: 120px;
+			.field {
+				margin: 5px 10px !important;
+			}
+		}
+		.f2 {
+			height: 100px;
+			justify-content: space-evenly;
+			.budget {
+				flex-direction: column;
+				align-items: flex-end !important;
+				height: 60%;
+				div {
+					margin: 0 2px;
+				}
+			}
+		}
+	}
+}
